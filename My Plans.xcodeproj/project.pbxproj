@@ -17,8 +17,13 @@
 		7EDC2857AAF193A473896441 /* NoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EDC2D283F8F0543F886D301 /* NoteCell.swift */; };
 		7EDC2AECD7A31CE1E989CB98 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EDC22BC7AE114E4944BA90F /* AppDelegate.swift */; };
 		7EDC2D87F030BB328DE91515 /* PlansController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EDC2D894750AE71ED7F5613 /* PlansController.swift */; };
-		F281E9AB215DD5B90047705C /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F281E9AA215DD5B90047705C /* MapViewController.swift */; };
+		F281E9AB215DD5B90047705C /* MapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F281E9AA215DD5B90047705C /* MapController.swift */; };
 		F282DA2E21519BA500D7C517 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F282DA2D21519BA500D7C517 /* CoreDataManager.swift */; };
+		F2C919BB21625F9700E517CC /* MapController+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C919BA21625F9700E517CC /* MapController+Constraints.swift */; };
+		F2C919BD216278D400E517CC /* MapController+Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C919BC216278D400E517CC /* MapController+Location.swift */; };
+		F2C919BF2162827F00E517CC /* MapController+AddAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C919BE2162827F00E517CC /* MapController+AddAnnotation.swift */; };
+		F2C919C12162898A00E517CC /* MapController+BtnHandlers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C919C02162898A00E517CC /* MapController+BtnHandlers.swift */; };
+		F2C919C321629EBF00E517CC /* MapController+AutoComplete.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C919C221629EBF00E517CC /* MapController+AutoComplete.swift */; };
 		F2DFFF4E21569BF400519786 /* CollectionView+Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DFFF4D21569BF400519786 /* CollectionView+Config.swift */; };
 		F2DFFF5021572FF400519786 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DFFF4F21572FF400519786 /* CollectionViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -36,8 +41,13 @@
 		7EDC2D283F8F0543F886D301 /* NoteCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteCell.swift; sourceTree = "<group>"; };
 		7EDC2D894750AE71ED7F5613 /* PlansController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlansController.swift; sourceTree = "<group>"; };
 		7EDC2ECFE9616AF32A95D271 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
-		F281E9AA215DD5B90047705C /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		F281E9AA215DD5B90047705C /* MapController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapController.swift; sourceTree = "<group>"; };
 		F282DA2D21519BA500D7C517 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		F2C919BA21625F9700E517CC /* MapController+Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapController+Constraints.swift"; sourceTree = "<group>"; };
+		F2C919BC216278D400E517CC /* MapController+Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapController+Location.swift"; sourceTree = "<group>"; };
+		F2C919BE2162827F00E517CC /* MapController+AddAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapController+AddAnnotation.swift"; sourceTree = "<group>"; };
+		F2C919C02162898A00E517CC /* MapController+BtnHandlers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapController+BtnHandlers.swift"; sourceTree = "<group>"; };
+		F2C919C221629EBF00E517CC /* MapController+AutoComplete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapController+AutoComplete.swift"; sourceTree = "<group>"; };
 		F2DFFF4D21569BF400519786 /* CollectionView+Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CollectionView+Config.swift"; sourceTree = "<group>"; };
 		F2DFFF4F21572FF400519786 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -150,7 +160,12 @@
 		F281E9A9215DD5750047705C /* MapController */ = {
 			isa = PBXGroup;
 			children = (
-				F281E9AA215DD5B90047705C /* MapViewController.swift */,
+				F281E9AA215DD5B90047705C /* MapController.swift */,
+				F2C919C221629EBF00E517CC /* MapController+AutoComplete.swift */,
+				F2C919BC216278D400E517CC /* MapController+Location.swift */,
+				F2C919C02162898A00E517CC /* MapController+BtnHandlers.swift */,
+				F2C919BE2162827F00E517CC /* MapController+AddAnnotation.swift */,
+				F2C919BA21625F9700E517CC /* MapController+Constraints.swift */,
 			);
 			path = MapController;
 			sourceTree = "<group>";
@@ -240,15 +255,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				7EDC2D87F030BB328DE91515 /* PlansController.swift in Sources */,
+				F2C919BB21625F9700E517CC /* MapController+Constraints.swift in Sources */,
 				7EDC2086833B58E8BD9E437E /* CustomNavController.swift in Sources */,
 				24F15EAF214F24F600A82EE9 /* PlansDataModel.xcdatamodeld in Sources */,
 				7EDC2AECD7A31CE1E989CB98 /* AppDelegate.swift in Sources */,
+				F2C919C321629EBF00E517CC /* MapController+AutoComplete.swift in Sources */,
 				7EDC2230AED5E10C5B3E6CBE /* PlansController+Extensions.swift in Sources */,
 				24F15EB2214F5B2B00A82EE9 /* CreatePlanDetailController.swift in Sources */,
 				F2DFFF4E21569BF400519786 /* CollectionView+Config.swift in Sources */,
-				F281E9AB215DD5B90047705C /* MapViewController.swift in Sources */,
+				F281E9AB215DD5B90047705C /* MapController.swift in Sources */,
+				F2C919BF2162827F00E517CC /* MapController+AddAnnotation.swift in Sources */,
 				F282DA2E21519BA500D7C517 /* CoreDataManager.swift in Sources */,
 				7EDC2857AAF193A473896441 /* NoteCell.swift in Sources */,
+				F2C919C12162898A00E517CC /* MapController+BtnHandlers.swift in Sources */,
+				F2C919BD216278D400E517CC /* MapController+Location.swift in Sources */,
 				2437A13321542DAF0092902B /* CreatePlanDetail+Extensions.swift in Sources */,
 				F2DFFF5021572FF400519786 /* CollectionViewCell.swift in Sources */,
 			);
