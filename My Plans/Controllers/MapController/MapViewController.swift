@@ -75,6 +75,19 @@ class MapController: UIViewController {
     }()
     let tableID = "searchResults"
     
+    ////////////////////
+    // Get Location Btn
+    ////////////////////
+    let findLocation: UIButton = {
+        let btn = UIButton(type: .custom)
+        btn.translatesAutoresizingMaskIntoConstraints = false
+        btn.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        btn.widthAnchor.constraint(equalToConstant: 30).isActive = true
+        btn.setImage(UIImage(named: "navigation"), for: .normal)
+        btn.contentMode = .scaleAspectFit
+        btn.alpha = 1
+        return btn
+    }()
 
     ////////////////////
     // Done Btn
@@ -158,6 +171,15 @@ class MapController: UIViewController {
         doneButton.trailingAnchor.constraint(equalTo: mapView.trailingAnchor, constant: -16).isActive = true
         doneButton.bottomAnchor.constraint(equalTo: mapView.bottomAnchor, constant: -32).isActive = true
         doneButton.addTarget(self, action: #selector(disMissMapView(_:)), for: .touchUpInside)
+        view.addSubview(findLocation)
+        findLocation.trailingAnchor.constraint(equalTo: searchBoxContainer.trailingAnchor, constant: 0).isActive = true
+        findLocation.topAnchor.constraint(equalTo: searchBoxContainer.bottomAnchor, constant: 32).isActive = true
+        findLocation.addTarget(self, action: #selector(getLocationButonHandler), for: .touchUpInside)
+    }
+    
+    @objc func getLocationButonHandler() {
+        configureGps()
+        print("Got here somehow")
     }
     
     ////////////////////
@@ -320,6 +342,8 @@ extension MapController: CLLocationManagerDelegate {
             // Store Values:
             let latitude = Double(location.coordinate.latitude)
             let longitude = Double(location.coordinate.longitude)
+            // Remove and prior Annotations
+            self.mapView.removeAnnotations(self.mapView.annotations)
             // Set Starting Point Positioning
             let myLocation = MKPointAnnotation()
             myLocation.title = "My Location"
